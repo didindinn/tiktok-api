@@ -9,4 +9,3 @@ for video in videos:
     print(api.get_meta_title(video))
     print(api.get_likes_count(video), "likes")
     print(api.get_comment_count(video), "comments")
-    ```
