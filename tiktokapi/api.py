@@ -1,6 +1,7 @@
 import requests
 import json
 import re
+import time
 
 headers = {'User-Agent': 'com.ss.android.ugc.trill/584 (Linux; U; Android 5.1.1; en_US; LG-H961N;',
            'X-SS-REQ-TICKET': '1541500434739',
@@ -73,7 +74,7 @@ class Api:
                 match = str(match)
                 match = match.replace('"', '')
                 video = videos.append(match)
-        
+
         return videos
 
     def get_popular_videos(self):
@@ -88,6 +89,11 @@ class Api:
                 match = match.replace('"', '')
                 video = videos.append(match)
 
+    def get_video_homepage(self, url):
+        home = str(requests.post(url, data=json.dumps(payload), headers=headers).content)
+        home = str(home)
+        return home
+
     def get_likes_count(self, url):
         home = str(requests.post(url, data=json.dumps(payload), headers=headers).content)
         home = str(home)
@@ -101,20 +107,36 @@ class Api:
     def get_comment_count(self, url):
         home = str(requests.post(url, data=json.dumps(payload), headers=headers).content)
         home = str(home)
-        likes = re.findall(r'xb7.+?.Comment' , home)
+        likes = re.findall(r'.xb7.+?.Comment' , home)
         likes = str(likes)
         likes = likes.replace("['xb7 ", "")
+        likes = likes.replace("\\", "")
+        likes = likes.replace("xb7", "")
+        likes = likes.replace("[' ", "")
         likes = likes.replace(" Comment']", "")
         return likes
+
+    def get_meta_title(self, url):
+        home = self.get_video_homepage(url)
+        home = str(home)
+        likes = re.findall(r'.video-meta-title.+?.</strong>' , home)
+        likes = str(likes)
+        likes = likes.replace("n<strong>", "")
+        likes = likes.replace("</strong>']", "")
+        likes = likes.replace("[' video-meta-title", "")
+        likes = likes.replace('">\\\ ', "")
+        
+        return likes
+    
+    def get_video_url(self, url):
+        home = self.get_video_homepage(url)
+        home = str(home)
+        video_url = re.findall(r'.https://v16-vcheckout.+?."' , home)
+        
+        return video_url
+       
 
 
     def get_videos_hashtags(self, url):
         pass
 
-api = Api()
-
-videos = api.get_user_videos("maskofshiva")
-
-for video in videos:
-    print(api.get_likes_count(video), "likes")
-    print(api.get_comment_count(video), "comments")
