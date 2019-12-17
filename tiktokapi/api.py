@@ -104,7 +104,7 @@ class Api:
         likes = re.findall(r'xb7.+?.Comment' , home)
         likes = str(likes)
         likes = likes.replace("['xb7 ", "")
-        likes = likes.replace("Comment']", "")
+        likes = likes.replace(" Comment']", "")
         return likes
 
 
@@ -116,8 +116,5 @@ api = Api()
 videos = api.get_user_videos("maskofshiva")
 
 for video in videos:
-    print(api.get_likes_count(video))
-#print(api.get_user_videos("maskofshiva"))
-#print(api.get_comment_count("https://tikitoks.com/maskofshiva/video/6771378249512635653/"))
-#print(api.get_likes_count("https://tikitoks.com/maskofshiva/video/6771378249512635653/"))
-#print(api.get_home_page("maskofshiva"))
+    print(api.get_likes_count(video), "likes")
+    print(api.get_comment_count(video), "comments")
