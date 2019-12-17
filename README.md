@@ -2,9 +2,8 @@
 
 
 ## Example
-videos = api.get_user_videos("maskofshiva")
-
 ```python
+videos = api.get_user_videos("maskofshiva")
 for video in videos:
     print(video)
     print(api.get_meta_title(video))
