@@ -35,4 +35,3 @@ setup(
     ],
     packages=find_packages(),
 )
- ste
