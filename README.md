@@ -15,5 +15,6 @@ for video in videos:
 ```
 <h2>Run this in bash or cmd:</h2><p>
 git clone https://github.com/instabotai/tiktok-api.git<p>
+cd tiktok-api/<p>
 pip3 install -r requirements.txt<p>
 python3 example.py
