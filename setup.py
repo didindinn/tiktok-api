@@ -17,7 +17,7 @@ setup(
     author="Steffan Jensen",
     author_email="brominercom2@gmail.com",
     license="Apache Software License 2.0",
-    url="https://github.com/reliefs/tiktok-api",
+    url="https://github.com/instabotai/tiktok-api",
     keywords=["tiktok", "bot", "api"],
     install_requires=[
         "requests",
