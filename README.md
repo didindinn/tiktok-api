@@ -3,9 +3,16 @@ tiktok-api
 </h1>
 <p align="center">
 <em>TikTok Web Api and Bot.</em></p>
+<p>
+<h2>RInstall with pip:</h2><p>
 
+pip install tiktok-api
+<p>
+    
 ## Quickstart
 ```python
+from tiktokapi import api
+api = api.Api()
 videos = api.get_user_videos("maskofshiva")
 for video in videos:
     print(video)
@@ -13,8 +20,3 @@ for video in videos:
     print(api.get_likes_count(video), "likes")
     print(api.get_comment_count(video), "comments")
 ```
-<h2>Run this in bash or cmd:</h2><p>
-git clone https://github.com/instabotai/tiktok-api.git<p>
-cd tiktok-api/<p>
-pip3 install -r requirements.txt<p>
-python3 example.py
