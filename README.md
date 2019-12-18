@@ -4,7 +4,7 @@ tiktok-api
 <p align="center">
 <em>TikTok Web Api and Bot.</em></p>
 <p>
-<h2>RInstall with pip:</h2><p>
+<h2>Install with pip:</h2><p>
 
 pip install tiktok-api
 <p>
