@@ -1,7 +1,10 @@
-<center><h1>tiktok-api</h2></center>
+<h1 align="center" style="font-size: 3rem;">
+tiktok-api
+</h1>
+<p align="center">
+ <em>TikTok Web Api and Bot.</em></p>
 
-
-## Example
+## Quickstart
 ```python
 videos = api.get_user_videos("maskofshiva")
 for video in videos:
