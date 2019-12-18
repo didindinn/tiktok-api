@@ -2,7 +2,7 @@
 tiktok-api
 </h1>
 <p align="center">
- <em>TikTok Web Api and Bot.</em></p>
+<em>TikTok Web Api and Bot.</em></p>
 
 ## Quickstart
 ```python
