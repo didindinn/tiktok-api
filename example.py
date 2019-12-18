@@ -1,6 +1,6 @@
-import tiktokapi
+from tiktokapi import api
 
-api = tiktokapi.api.Api()
+api = api.Api()
 
 videos = api.get_user_videos("maskofshiva")
 
