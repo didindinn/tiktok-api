@@ -10,8 +10,8 @@ with open(path.join(here, "README.md"), encoding="utf-8") as f:
     long_description = f.read()
 
 setup(
-    name="tiktok-api",
-    version="0.10.0",
+    name="tiktokapi",
+    version="0.10.1",
     description="Tiktok Api.",
     long_description=long_description,
     author="Steffan Jensen",
@@ -22,6 +22,9 @@ setup(
     install_requires=[
         "requests",
     ],
+        entry_points={
+        'console_scripts': ['tiktokapi=tiktokapi:api'],
+    },
     classifiers=[
         # How mature is this project? Common values are
         "Development Status :: 5 - Production/Stable",
