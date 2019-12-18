@@ -12,3 +12,8 @@ for video in videos:
     print(api.get_meta_title(video))
     print(api.get_likes_count(video), "likes")
     print(api.get_comment_count(video), "comments")
+
+Run this in bash or cmd:
+git clone git@github.com:instabotai/tiktok-api.git
+pip3 install -r requirements.txt
+python3 example.py
