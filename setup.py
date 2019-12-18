@@ -3,17 +3,12 @@ from os import path
 
 from setuptools import find_packages, setup
 
-here = path.abspath(path.dirname(__file__))
-
-# Get the long description from the README file
-with open(path.join(here, "README.md"), encoding="utf-8") as f:
-    long_description = f.read()
 
 setup(
-    name="tiktokapi",
-    version="0.10.1",
+    name="tiktok-api",
+    version="0.10.2",
     description="Tiktok Api.",
-    long_description=long_description,
+#    description="tiktok api",
     author="Steffan Jensen",
     author_email="brominercom2@gmail.com",
     license="Apache Software License 2.0",
@@ -23,7 +18,7 @@ setup(
         "requests",
     ],
         entry_points={
-        'console_scripts': ['tiktokapi=tiktokapi:api'],
+        'console_scripts': ['tiktok-api=tiktokapi:api'],
     },
     classifiers=[
         # How mature is this project? Common values are
@@ -40,3 +35,4 @@ setup(
     ],
     packages=find_packages(),
 )
+ ste
