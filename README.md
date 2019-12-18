@@ -14,6 +14,6 @@ for video in videos:
     print(api.get_comment_count(video), "comments")
 ```
 <h2>Run this in bash or cmd:</h2><p>
-git clone git@github.com:instabotai/tiktok-api.git<p>
+git clone https://github.com/instabotai/tiktok-api.git<p>
 pip3 install -r requirements.txt<p>
 python3 example.py
